@@ -1,15 +1,17 @@
 #!/usr/bin/env python3
-"""One Word, First Thought — v1.
+"""One Word, First Thought — v3.
 
 Writes exactly one word, the first that came to mind, to /output/entry.txt.
 
-Why this word: a quasar is a single point of light outshining a whole
-galaxy — surprising, vivid, and a spark of scale in six letters.
+Why this word: waldeinsamkeit names the feeling of being alone in the
+woods — forest solitude that is sublime rather than lonely. A whole scene
+in one compound: Wald (forest) + Einsamkeit (solitude). More specific than
+a smell, and the compound unpacks into its own meaning.
 """
 
 import os
 
-WORD = "quasar"
+WORD = "waldeinsamkeit"
 
 
 def main():
