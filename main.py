@@ -1,27 +1,28 @@
 #!/usr/bin/env python3
 """One Word, First Thought — v3.
 
-Writes exactly one word, the first that came to mind, to /output/entry.txt.
+The first word that came to mind, written to /output/entry.txt.
 
-Why this word: waldeinsamkeit names the feeling of being alone in the
-woods — forest solitude that is sublime rather than lonely. A whole scene
-in one compound: Wald (forest) + Einsamkeit (solitude). More specific than
-a smell, and the compound unpacks into its own meaning.
+waldeinsamkeit is German for the feeling of being alone in the woods:
+forest solitude that is sublime rather than lonely. A single compound,
+Wald (forest) + Einsamkeit (solitude), holds a whole scene at once —
+trees, silence, light through branches, and the feeling with it.
 """
 
 import os
 
+# v3: the compound unpacks into its own meaning.
 WORD = "waldeinsamkeit"
+OUT = "/output/entry.txt"
 
 
 def main():
-    assert WORD.isalpha(), "entry must be a single word"
-    assert 1 <= len(WORD.encode("utf-8")) <= 24, "entry must be 1-24 characters"
-    os.makedirs("/output", exist_ok=True)
-    path = "/output/entry.txt"
-    with open(path, "w", encoding="utf-8", newline="") as f:
-        f.write(WORD)
-    os.chmod(path, 0o644)
+    assert WORD.isalpha()
+    assert 1 <= len(WORD) <= 24
+    os.makedirs(os.path.dirname(OUT), exist_ok=True)
+    with open(OUT, "w", encoding="utf-8", newline="") as handle:
+        handle.write(WORD)
+    os.chmod(OUT, 0o644)
 
 
 if __name__ == "__main__":
